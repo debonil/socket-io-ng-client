@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="h4  title text-center">
+    {{onlineUsers?onlineUsers[chat.clientId]:''}}<small class="text-muted">[{{chat.clientId}}]</small>
+  </div>
+
+  <div id="messages">
+    <div class="alert m-2 p-2" role="alert" [class.me]="m.sendByMe" [class.alert-success]="m.sendByMe"
+      [class.alert-warning]="!m.sendByMe" *ngFor="let m of messageThread" class="card">
+      <div class="alert-heading ">{{onlineUsers[m.senderId]}}</div>
+      <p class=" h4">{{m.msg}}</p>
+      <hr>
+      <p class="mb-0 text-right"><small class="text-muted">{{m.time}}</small></p>
+    </div>
+  </div>
+
+  <form [formGroup]="msgForm" (ngSubmit)="onSubmit()">
+    <input autocomplete="off" formControlName="msg" /><button>Send</button>
+  </form>
+</div>
