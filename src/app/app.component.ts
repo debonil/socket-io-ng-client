@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'socket-io-ng-client';
+  title = 'socket-io-ng-client v 1.0.0';
 }
