@@ -22,7 +22,7 @@ export class SocketClientComponent implements OnInit {
   noOfOnlineUsers: number;
   msgForm: FormGroup;
 
-  constructor(private chat: ChatService, private fb: FormBuilder) {
+  constructor(public chat: ChatService, private fb: FormBuilder) {
     this.msgForm = this.fb.group({
       msg: new FormControl('', Validators.required)
     });
